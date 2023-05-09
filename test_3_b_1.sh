@@ -1,6 +1,7 @@
 #!/bin/bash
 
-sysbench --db-driver=mysql \
+sysbench oltp_insert \
+	--db-driver=mysql \
 	--mysql-host=127.0.0.1 \
 	--mysql-user=root \
 	--mysql-password=123456 \
@@ -10,9 +11,10 @@ sysbench --db-driver=mysql \
 	--threads=16 \
 	--time=60 \
 	--report-interval=10 \
-	/usr/share/sysbench/oltp_insert.lua prepare
+	prepare
 
-sysbench --db-driver=mysql \
+sysbench oltp_insert \
+	--db-driver=mysql \
 	--mysql-host=127.0.0.1 \
 	--mysql-user=root \
 	--mysql-password=123456 \
@@ -22,9 +24,10 @@ sysbench --db-driver=mysql \
 	--threads=16 \
 	--time=60 \
 	--report-interval=10 \
-	/usr/share/sysbench/oltp_insert.lua run
+	run
 
-sysbench --db-driver=mysql \
+sysbench oltp_insert \
+	--db-driver=mysql \
 	--mysql-host=127.0.0.1 \
 	--mysql-user=root \
 	--mysql-password=123456 \
@@ -34,4 +37,4 @@ sysbench --db-driver=mysql \
 	--threads=16 \
 	--time=60 \
 	--report-interval=10 \
-	/usr/share/sysbench/oltp_insert.lua cleanup
+	cleanup
